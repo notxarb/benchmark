@@ -1,0 +1,22 @@
+###no comment###
+web1:
+   name: benchmark
+   shared_writable_dirs:
+      - /benchmark
+   php_extensions:
+      - mysql
+      - memcache
+      - memcached
+      - pdo_mysql
+      - mysqli
+      - sockets
+      - redis
+db1:
+   name: benchmark
+   type: mysql
+cache1:
+   name: benchmark
+   type: memcached
+cache2:
+   name: redis
+   type: redis
