@@ -24,6 +24,5 @@
       echo "$i don't match - $in - $out";
     }
   }
-  $redis->set("test".$size, )
   $redis->close();
 ?>
