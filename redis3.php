@@ -1,7 +1,7 @@
 <?php 
 class FuelRedis
 {
-  CRLF = "\r\n"
+  $CRLF = "\r\n";
 	/**
 	 * Multiton pattern, keep track of all created instances
 	 */
@@ -141,9 +141,9 @@ class FuelRedis
 		// build the Redis unified protocol command
 		array_unshift($args, strtoupper($name));
 
-		$command = sprintf('*%d%s%s%s', count($args), CRLF, implode(array_map(function($arg) {
-			return sprintf('$%d%s%s', strlen($arg), CRLF, $arg);
-		}, $args), CRLF), CRLF);
+		$command = sprintf('*%d%s%s%s', count($args), $CRLF, implode(array_map(function($arg) {
+			return sprintf('$%d%s%s', strlen($arg), $CRLF, $arg);
+		}, $args), $CRLF), $CRLF);
 
 		// add it to the pipeline queue
 		$this->queue[] = $command;
