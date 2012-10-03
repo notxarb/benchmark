@@ -1,5 +1,5 @@
 <?php
-  public static function genstring($size)
+  function genstring($size)
   {
     $string = '';
     for ($i = 0; $i < $size; $i++)
