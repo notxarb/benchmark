@@ -2,7 +2,7 @@
   function genstring($size)
   {
     $string = '';
-    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=~!@#$%^&*()_+<>?/.,;:"{}[]'
+    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=~!@#$%^&*()_+<>?/.,;:"{}[]';
     for ($i = 0; $i < $size; $i++)
     {
       $string .= substr($charset, rand(0,90), 1);
