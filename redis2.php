@@ -13,8 +13,8 @@
   for($i = 64; $i < 4096; $i *= 2)
   {
     $in = genstring($i);
-    $redis->set("test".$size, $in);
-    $out = $redis->get("test".$size);
+    $redis->set("test".$i, $in);
+    $out = $redis->get("test".$i);
     if ($in == $out)
     {
       echo "$i match - $in - $out";
