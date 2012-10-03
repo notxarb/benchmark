@@ -240,8 +240,6 @@ class FuelRedis
 
 }
 
-$redis = FuelRedis::instance('default');
-
 function genstring($size)
 {
   $string = '';
@@ -253,7 +251,7 @@ function genstring($size)
   return $string;
 }
 
-$redis = Redis::instance('default');
+$redis = FuelRedis::instance('default');
 for($i = 64; $i < 65536; $i *= 2)
 {
   $in = genstring($i);
