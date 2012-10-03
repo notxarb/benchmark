@@ -1,5 +1,5 @@
 <?php 
-class Redis
+class FuelRedis
 {
 	/**
 	 * Multiton pattern, keep track of all created instances
@@ -240,7 +240,7 @@ class Redis
 
 }
 
-$redis = Redis::instance('default');
+$redis = FuelRedis::instance('default');
 
 function genstring($size)
 {
