@@ -26,7 +26,7 @@ class FuelRedis
 	 */
 	public static function forge($name = 'default', $config = array())
 	{
-		empty(static::$instances) and \Config::load('db', true);
+		empty(static::$instances)
 
 
 		$config = array('hostname' => $_SERVER['CACHE2_HOST'], 'port' => $_SERVER['CACHE2_PORT'], 'timeout' => 15);
