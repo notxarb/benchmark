@@ -2,15 +2,16 @@
   function genstring($size)
   {
     $string = '';
+    $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=~!@#$%^&*()_+<>?/.,;:"{}[]'
     for ($i = 0; $i < $size; $i++)
     {
-      $string .= $i % 10;
+      $string .= substr($charset, rand(0,90), 1);
     }
     return $string;
   }
   $redis = new Redis();
   $redis->connect($_SERVER['CACHE2_HOST'], $_SERVER['CACHE2_PORT']);
-  for($i = 64; $i < 4096; $i *= 2)
+  for($i = 64; $i < 65536; $i *= 2)
   {
     $in = genstring($i);
     $redis->set("test".$i, $in);
