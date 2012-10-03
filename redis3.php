@@ -143,6 +143,7 @@ class FuelRedis
 		array_unshift($args, strtoupper($name));
 
 		$command = sprintf('*%d%s%s%s', count($args), $crlf, implode(array_map(function($arg) {
+		  $crlf = "\r\n";
 			return sprintf('$%d%s%s', strlen($arg), $crlf, $arg);
 		}, $args), $crlf), $crlf);
 
