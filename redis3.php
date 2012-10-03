@@ -1,6 +1,7 @@
 <?php 
 class FuelRedis
 {
+  CRLF = "\r\n"
 	/**
 	 * Multiton pattern, keep track of all created instances
 	 */
