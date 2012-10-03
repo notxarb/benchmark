@@ -29,7 +29,7 @@ class Redis
 		empty(static::$instances) and \Config::load('db', true);
 
 
-		$config = array('hostname' => $_SERVER['CACHE2_HOST'], 'port' => $_SERVER['CACHE2_PORT'], 'timeout' => 15)
+		$config = array('hostname' => $_SERVER['CACHE2_HOST'], 'port' => $_SERVER['CACHE2_PORT'], 'timeout' => 15);
 
 		static::$instances[$name] = new static($config);
 
