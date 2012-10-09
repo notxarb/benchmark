@@ -18,11 +18,11 @@
     $out = $redis->get("test".$i);
     if ($in == $out)
     {
-      echo "$i match - $in - $out<br />";
+      echo "$i match<br />\n";
     }
     else
     {
-      echo "$i don't match - $in - $out<br />";
+      echo "$i don't match<br />\n";
     }
   }
   $redis->close();
