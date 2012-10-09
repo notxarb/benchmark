@@ -15,8 +15,11 @@ class TestSuite {
 
 		$bt = debug_backtrace(false);
 		$count = count($bt);
-		self::$errors []= sprintf("Assertion failed: %s:%d (%s)<br>\n",
-			$bt[$count - 2]["file"], $bt[$count - 3]["line"], $bt[$count - 1]["function"]);
+		foreach($bt as $b)
+		{
+		  self::$errors []= sprintf("Assertion failed: %s:%d (%s)<br>\n",
+  			$b["file"], $b["line"], $b["function"]);
+		}
 	}
 
 	protected function assertEquals($a, $b) {
