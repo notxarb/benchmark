@@ -15,7 +15,7 @@ class TestSuite {
 
 		$bt = debug_backtrace(false);
 		$count = count($bt);
-		self::$errors []= sprintf("Assertion failed: %s:%d (%s)\n",
+		self::$errors []= sprintf("Assertion failed: %s:%d (%s)<br>\n",
 			$bt[$count - 2]["file"], $bt[$count - 3]["line"], $bt[$count - 1]["function"]);
 	}
 
@@ -25,7 +25,7 @@ class TestSuite {
 
 		$bt = debug_backtrace(false);
 		$count = count($bt);
-		self::$errors []= sprintf("Assertion failed (%s !== %s): %s:%d (%s)\n",
+		self::$errors []= sprintf("Assertion failed (%s !== %s): %s:%d (%s)<br>\n",
 			print_r($a, true), print_r($b, true),
 			$bt[$count - 2]["file"], $bt[$count - 3]["line"], $bt[$count - 1]["function"]);
 	}
@@ -45,7 +45,9 @@ class TestSuite {
 			$rt = new $className;
 			$rt->setUp();
 			$rt->$name();
+			echo "$name: ";
 			echo ($count === count($className::$errors)) ? "." : "F";
+			echo "<br>\n";
 		}
 		echo "\n";
 
