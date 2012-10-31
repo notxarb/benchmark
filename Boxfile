@@ -1,5 +1,6 @@
 ###no comment###
 web1:
+   type: php
    name: benchmark
    shared_writable_dirs:
       - /benchmark
