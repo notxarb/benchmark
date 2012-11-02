@@ -24,6 +24,7 @@ cache2:
    type: redis
 worker1:
    exec: "php /var/www/sleep.php"
+   type: php
    start:
       ready: "sleeping"
       timeout: 2
