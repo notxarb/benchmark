@@ -1,4 +1,4 @@
 <?php
-echo "sleeping"
+echo "sleeping";
 sleep(120);
 ?>
