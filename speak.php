@@ -51,7 +51,7 @@ if (isset($_SERVER['DB1_HOST']) && isset($_SERVER['DB1_PORT']) && isset($_SERVER
           <p>No need to move in haste, the universe is patient.</p>
         </div>
       <? else: ?>
-        <form action="index.php" method="post">
+        <form action="speak.php" method="post">
           <div class="border">
             <input type="text" name="Content" class="textarea" />
           </div>
