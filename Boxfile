@@ -13,18 +13,18 @@ web1:
       - sockets
       - redis
       - igbinary
-db1:
-   name: benchmark
-   type: mysql
-cache1:
-   name: benchmark
-   type: memcached
-cache2:
-   name: redis
-   type: redis
-worker1:
-   exec: "php /var/www/sleep.php"
-   type: php
-   start:
-      ready: "sleeping"
-      timeout: 2
+# db1:
+#    name: benchmark
+#    type: mysql
+# cache1:
+#    name: benchmark
+#    type: memcached
+# cache2:
+#    name: redis
+#    type: redis
+# worker1:
+#    exec: "php /var/www/sleep.php"
+#    type: php
+#    start:
+#       ready: "sleeping"
+#       timeout: 2
