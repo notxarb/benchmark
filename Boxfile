@@ -13,9 +13,9 @@ web1:
       - sockets
       - redis
       - igbinary
-# db1:
-#    name: benchmark
-#    type: mysql
+db1:
+   name: benchmark
+   type: mysql
 # cache1:
 #    name: benchmark
 #    type: memcached
