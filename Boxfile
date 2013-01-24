@@ -19,9 +19,9 @@ db1:
 cache1:
    name: benchmark
    type: memcached
-# cache2:
-#    name: redis
-#    type: redis
+cache2:
+   name: redis
+   type: redis
 # worker1:
 #    exec: "php /var/www/sleep.php"
 #    type: php
