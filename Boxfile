@@ -16,9 +16,9 @@ web1:
 db1:
    name: benchmark
    type: mysql
-# cache1:
-#    name: benchmark
-#    type: memcached
+cache1:
+   name: benchmark
+   type: memcached
 # cache2:
 #    name: redis
 #    type: redis
