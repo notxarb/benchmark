@@ -18,7 +18,9 @@ if (isset($_SERVER['DB1_HOST']) && isset($_SERVER['DB1_PORT']) && isset($_SERVER
     mysql_query($sql, $con);
 
     if ($content = $_POST['Content']) {
-      $sql = "INSERT INTO Message (Content) VALUES ('" . mysql_real_escape_string($content, $con) . "')";
+      $words = str_word_count($content);
+      $blah = str_repeat("blah ", $words);
+      $sql = "INSERT INTO Message (Content) VALUES ('" . mysql_real_escape_string(trim($blah), $con) . "')";
       mysql_query($sql, $con);
     }
   }
