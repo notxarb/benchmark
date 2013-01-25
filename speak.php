@@ -13,21 +13,23 @@ if (isset($_SERVER['DB1_HOST']) && isset($_SERVER['DB1_PORT']) && isset($_SERVER
   $noDatabase = !mysql_select_db($_SERVER['DB1_NAME'], $con);
 
   if (isset($_POST['Content'])) {
-    // Drop Table if content is 'bobby"; drop tables;'
-    if (strcmp($_POST['Content'], 'bobby"; drop tables;') == 0)
-    {
-      $sql = 'DROP TABLE `Message`;';
-      mysql_query($sql, $con);
-    }
     // Create Table if not exist
     $sql = 'CREATE TABLE IF NOT EXISTS `Message` (`Content` text NOT NULL) ENGINE=MyISAM DEFAULT CHARSET=utf8';
     mysql_query($sql, $con);
-
-    if ($content = $_POST['Content']) {
-      $words = str_word_count($content);
-      $blah = str_repeat("blah ", $words);
-      $sql = "INSERT INTO Message (Content) VALUES ('" . mysql_real_escape_string(trim($blah), $con) . "')";
+    // Drop Table if content is 'bobby"; drop tables;'
+    if (strcmp($_POST['Content'], 'bobby"; drop tables;') == 0)
+    {
+      $sql = 'TRUNCATE TABLE `Message`;';
       mysql_query($sql, $con);
+    }
+    else
+    {
+      if ($content = $_POST['Content']) {
+        $words = str_word_count($content);
+        $blah = str_repeat("blah ", $words);
+        $sql = "INSERT INTO Message (Content) VALUES ('" . mysql_real_escape_string(trim($blah), $con) . "')";
+        mysql_query($sql, $con);
+      }
     }
   }
 }
