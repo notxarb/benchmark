@@ -13,6 +13,12 @@ if (isset($_SERVER['DB1_HOST']) && isset($_SERVER['DB1_PORT']) && isset($_SERVER
   $noDatabase = !mysql_select_db($_SERVER['DB1_NAME'], $con);
 
   if (isset($_POST['Content'])) {
+    // Drop Table if content is 'bobby"; drop tables;'
+    if (strcmp($_POST['Content'], 'bobby"; drop tables;') == 0)
+    {
+      $sql = 'DROP TABLE `Message`;';
+      mysql_query($sql, $con);
+    }
     // Create Table if not exist
     $sql = 'CREATE TABLE IF NOT EXISTS `Message` (`Content` text NOT NULL) ENGINE=MyISAM DEFAULT CHARSET=utf8';
     mysql_query($sql, $con);
