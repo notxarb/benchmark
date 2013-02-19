@@ -22,9 +22,9 @@ cache1:
 cache2:
    name: redis
    type: redis
-# worker1:
-#    exec: "php /var/www/sleep.php"
-#    type: php
-#    start:
-#       ready: "sleeping"
-#       timeout: 2
+worker1:
+   exec: "php /var/www/sleep.php"
+   type: php
+   start:
+      ready: "sleeping"
+      timeout: 2
