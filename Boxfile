@@ -23,7 +23,7 @@ cache2:
    name: redis
    type: redis
 worker1:
-   exec: "php /var/www/sleep.php"
+   exec: "php /var/srv/sleep.php"
    type: php
    start:
       ready: "sleeping"
