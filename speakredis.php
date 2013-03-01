@@ -27,7 +27,7 @@ if (isset($_SERVER['CACHE2_HOST']) && isset($_SERVER['CACHE2_PORT'])) {
       if ($content = $_POST['Content']) {
         $words = str_word_count($content);
         $blah = str_repeat("blah ", $words);
-        $r->lPush("messages", $blah);
+        $r->lPush("messages", trim($blah));
       }
     }
   }
