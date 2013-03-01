@@ -20,7 +20,7 @@ if (isset($_SERVER['CACHE2_HOST']) && isset($_SERVER['CACHE2_PORT'])) {
     // Drop key if content is 'bobby"; drop tables;'
     if (strcmp($_POST['Content'], 'bobby"; drop tables;') == 0)
     {
-      $r->delete("messages")
+      $r->delete("messages");
     }
     else
     {
@@ -68,7 +68,7 @@ if (isset($_SERVER['CACHE2_HOST']) && isset($_SERVER['CACHE2_PORT'])) {
           <div class="message-box">
             <?          
             $cssClass  = array("yellow", "orange");
-            $valAr = $r->lRange('message', 0, -1);
+            $valAr = $r->lRange('messages', 0, -1);
 
             // Reverse array and print values as html
             $len = count($valAr);
