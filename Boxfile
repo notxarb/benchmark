@@ -13,6 +13,10 @@ web1:
       - sockets
       - redis
       - igbinary
+web2:
+   type: php
+   name: KingHenryVIII
+   document_root: images
 db1:
    name: benchmark
    type: mysql
