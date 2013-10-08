@@ -2,6 +2,7 @@
 web1:
    type: php
    name: benchmark
+   version: 5.3
    shared_writable_dirs:
       - /benchmark
    php_extensions:
@@ -13,10 +14,43 @@ web1:
       - sockets
       - redis
       - igbinary
+      - zlib
 web2:
    type: php
    name: KingHenryVIII
    document_root: images
+web3:
+   type: php
+   name: Alphred
+   version: 5.4
+   shared_writable_dirs:
+      - /benchmark
+   php_extensions:
+      - mysql
+      - memcache
+      - memcached
+      - pdo_mysql
+      - mysqli
+      - sockets
+      - redis
+      - igbinary
+      - zlib
+web4:
+   type: php
+   name: Gandalph
+   version: 5.5
+   shared_writable_dirs:
+      - /benchmark
+   php_extensions:
+      - mysql
+      - memcache
+      - memcached
+      - pdo_mysql
+      - mysqli
+      - sockets
+      - redis
+      - igbinary
+      - zlib
 db1:
    name: benchmark
    type: mysql
@@ -27,7 +61,7 @@ cache2:
    name: redis
    type: redis
 worker1:
-   exec: "php /var/srv/sleep.php"
+   exec: "php /data/sleep.php"
    type: php
    start:
       ready: "sleeping"
