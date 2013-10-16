@@ -15,42 +15,42 @@ web1:
       - redis
       - igbinary
       - zlib
-web2:
-   type: php
-   name: KingHenryVIII
-   document_root: images
-web3:
-   type: php
-   name: Alphred
-   version: 5.4
-   shared_writable_dirs:
-      - /benchmark
-   php_extensions:
-      - mysql
-      - memcache
-      - memcached
-      - pdo_mysql
-      - mysqli
-      - sockets
-      - redis
-      - igbinary
-      - zlib
-web4:
-   type: php
-   name: Gandalph
-   version: 5.5
-   shared_writable_dirs:
-      - /benchmark
-   php_extensions:
-      - mysql
-      - memcache
-      - memcached
-      - pdo_mysql
-      - mysqli
-      - sockets
-      - redis
-      - igbinary
-      - zlib
+# web2:
+#   type: php
+#   name: KingHenryVIII
+#   document_root: images
+#web3:
+#   type: php
+#   name: Alphred
+#   version: 5.4
+#   shared_writable_dirs:
+#      - /benchmark
+#   php_extensions:
+#      - mysql
+#      - memcache
+#      - memcached
+#      - pdo_mysql
+#      - mysqli
+#      - sockets
+#      - redis
+#      - igbinary
+#      - zlib
+#web4:
+#   type: php
+#   name: Gandalph
+#   version: 5.5
+#   shared_writable_dirs:
+#      - /benchmark
+#   php_extensions:
+#      - mysql
+#      - memcache
+#      - memcached
+#      - pdo_mysql
+#      - mysqli
+#      - sockets
+#      - redis
+#      - igbinary
+#      - zlib
 db1:
    name: benchmark
    type: mysql
